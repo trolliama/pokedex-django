@@ -1,0 +1,12 @@
+.navbar-brand a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-brand i{
+    margin-left: 4px;
+}
+
+.highlight{
+    color: #e74c3c;
+}
