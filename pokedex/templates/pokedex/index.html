@@ -1,7 +1,10 @@
-{% extends 'base.html' %}
+{% load static %}
 
-{% block content %}
-    <div class="container">
-        {% include 'nav.html' %}
-    </div>
-{% endblock %}
+{% include 'links-css.html' %}
+<link rel="stylesheet" href="{% static 'pokedex/style.css' %}">
+
+<div class="container">
+    {% include 'nav.html' %}
+</div>
+
+{% include 'links-js.html' %}

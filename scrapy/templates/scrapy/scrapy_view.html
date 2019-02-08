@@ -1,0 +1,58 @@
+{% load static %}
+
+{% include 'links-css.html' %}
+<link rel="stylesheet" href="{% static 'scrapy/style.css' %}">
+
+<div class="container w-50">
+    <h1 class="display-4">Scrapy Data</h1>
+
+    <!-- List group -->
+    <div class="col-8 mx-auto my-5 py-5" id="Group">
+        <div class="list-group">
+            <div>
+                <a id="Tipos-link" class="list-group-item list-group-item-action mb-1 shadow-sm rounded-0" data-toggle="collapse" href="#collapseTipos" role="button" aria-expanded="true" aria-controls="collapseExample" disabled>
+                    <div class="d-flex align-items-center">
+                        <span>Tipos</span>
+                        <div id="spinnerTipos" class="collapse spinner-border spinner-border-sm text-success ml-auto" role="status" aria-hidden="true"></div>
+                    </div>
+                    <button class="btn btn-block btn-outline-success collapse" id="collapseTipos" type="button" data-parent="#Group" data-toggle="collapse" data-target="#spinnerTipos" onclick="disableLinks()">Scrapy</button>
+                </a>
+            </div>
+            <div>
+                <a id="Hab-link" class="list-group-item list-group-item-action mb-1 shadow-sm rounded-0" data-toggle="collapse" href="#collapseHab" role="button" aria-expanded="true" aria-controls="collapseExample">
+                    <div class="d-flex align-items-center">
+                        <span>Habilidades</span>
+                        <div class="collapse spinner-border spinner-border-sm text-success ml-auto" role="status" aria-hidden="true"></div>
+                    </div>
+                    <button class="btn btn-block btn-outline-success collapse" id="collapseHab" data-parent="#Group">Scrapy</button>
+                </a>
+            </div>
+            <div>
+                <a id="Cat-link" class="list-group-item list-group-item-action mb-1 shadow-sm rounded-0" data-toggle="collapse" href="#collapseCat" role="button" aria-expanded="true" aria-controls="collapseExample">
+                    <div class="d-flex align-items-center">
+                        <span>Categorias</span>
+                        <div class="collapse spinner-border spinner-border-sm text-success ml-auto" role="status" aria-hidden="true"></div>
+                    </div>
+                    <button class="btn btn-block btn-outline-success collapse" id="collapseCat" data-parent="#Group">Scrapy</button>
+
+                </a>
+            </div>
+            <div>
+                <a id="Poke-link" class="list-group-item list-group-item-action mb-1 shadow-sm rounded-0" data-toggle="collapse" href="#collapsePoke" role="button" aria-expanded="true" aria-controls="collapseExample">
+                    <div class="d-flex align-items-center">
+                        <span>Pokémons</span>
+                        <div class="collapse spinner-border spinner-border-sm text-success ml-auto" role="status" aria-hidden="true"></div>
+                    </div>
+                    <button class="btn btn-block btn-outline-success collapse" id="collapsePoke" data-parent="#Group">Scrapy</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'links-js.html' %}
+<script type="text/javascript">
+    function disableLinks() {
+        $("a").addClass("disabled");
+    }
+</script>
