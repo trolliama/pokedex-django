@@ -49,7 +49,7 @@ class Pokemon(ScrapyMTM):
         for td in tr.find_all('td')[1:]:
             classe_valor = td['class'][0]
             if classe_valor not in ('cell-icon', 'cell-total'):  # O atributo da tag 'cell-total' não me interessa
-                data = td.string
+                data = td.a.string if td.small else td.string
                 data = str(data) if classe_valor != "cell-num" else int(data)
                 self.data.append(data)
 
@@ -59,7 +59,7 @@ class Pokemon(ScrapyMTM):
         self.collect_altura_peso(second_url)
         self.collect_categoria(second_url)
 
-        print('\nDados do pokémon {} coletado com sucesso!!'.format(self.data[1]))
+        print('\nDados do pokémon {} - {} coletado com sucesso!!'.format(self.poke_id, self.data[1]))
 
         return second_url
 
@@ -67,19 +67,15 @@ class Pokemon(ScrapyMTM):
     def collect_idevolucao(self, url_code):
         div_classe = 'column-12 push-1 dog-ear-bl'
         div_code = url_code.find('div', class_=div_classe)
-        print("div_code: ", div_code)
         li = div_code.find('li', class_='last')
-        print("li: ", li)
-
         try:
             id_last = li.find('span').string.strip() # Poderá ser levantada uma exceção caso o pokémon tenha apenas uma versão, pois não existirá uma tag com classe 'last'
-            print("id_last: ", id_last)
 
             if int(id_last[3: ]) - self.poke_id > 0: # Se o id_last menos o id do pokémon for maior que zero quer dizer que ele tem evolução, se não ser[a levantada uma exceção
                 self.data.append(self.poke_id + 1)
                 print("Id da evolução do pokémon coletado com sucesso!")
             else: raise ValueError # Levanta a exceção
 
-        except Exception as e:
+        except (ValueError, AttributeError) as e:
             self.data.append(None)
             print('Pokémon não tem evolução')

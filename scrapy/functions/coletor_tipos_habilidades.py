@@ -17,12 +17,22 @@ def insert_ability(habilidade_):
     except IntegrityError:
         return None
 
-def collect():
-    URLS = {'https://pokemondb.net/ability': insert_ability, 'https://pokemondb.net/type': insert_types}
-    
-    for url in URLS.keys():
-        reqs = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        html_code = BeautifulSoup(urlopen(reqs).read(), 'html.parser').find('tbody')
+def collect_types():
+    print('renn')
+    site_url = 'https://pokemondb.net/type'
 
-        for link_data in html_code.find_all('a'):
-            URLS[url](str(link_data.string))
+    reqs = Request(site_url, headers={'User-Agent': 'Mozilla/5.0'})
+    html_code = BeautifulSoup(urlopen(reqs).read(), 'html.parser').find('tbody')
+
+    for link_data in html_code.find_all('a'):
+        insert_types(str(link_data.string))
+
+def collect_ability():
+    print('renn')
+    site_url = 'https://pokemondb.net/ability'
+
+    reqs = Request(site_url, headers={'User-Agent': 'Mozilla/5.0'})
+    html_code = BeautifulSoup(urlopen(reqs).read(), 'html.parser').find('tbody')
+
+    for link_data in html_code.find_all('a'):
+        insert_ability(str(link_data.string))

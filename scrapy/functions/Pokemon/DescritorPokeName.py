@@ -15,7 +15,7 @@ class PokeName():
             self.data[instance] = self.recreate_name(poke_name)
         else:
             self.data[instance] = poke_name
-        
+
     def tem_caractere_ilegal(self, s):
         """Verificação de caractere com acentuação"""
 

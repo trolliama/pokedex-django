@@ -41,7 +41,7 @@ class Pokemons(models.Model):
     altura = models.DecimalField(max_digits=4, decimal_places=2, default=0)
     peso = models.DecimalField(max_digits=5, decimal_places=2, default=0)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, default=None)
-    id_evolucao = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
+    poke_evolucao = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
     tipos = models.ManyToManyField(Tipos, related_name='tipos')
     fraquezas = models.ManyToManyField(Tipos, related_name='fraquezas')
     sexo = models.ManyToManyField(Sexos)

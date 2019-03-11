@@ -13,7 +13,7 @@ def get_html():
     return html_code
 
 def collect():
-
+    print('ren')
     html_code = get_html()
 
     for tr in html_code.find_all('tr'):
