@@ -6,5 +6,4 @@ from .models import Pokemons
 class IndexView(ListView):
     model = Pokemons
     context_object_name = 'pokemons'
-    queryset = Pokemons.objects.all()
     template_name = 'pokedex/index.html'
