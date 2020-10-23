@@ -1,6 +1,6 @@
 # pokedex-django
 
-##Um site para adicionar seus pokémons e favoritá-los
+## Um site para adicionar seus pokémons e favoritá-los
 
 
 ### Scrapy<br>
@@ -17,10 +17,10 @@
 * MySql
 > Para usar MySql é preciso fazer o download do conector da linguagem python no site oficial
 
-```
 
 ## Iniciar o scrapy
 > Para iniciar o scrapy vá até a url http://localhost:8000/scrapy e aperte em uma das opções
+
 
 ###### Observações
 > Verifique a estabilidade da sua internet, pois isto poderá ocasionar erros <br>
