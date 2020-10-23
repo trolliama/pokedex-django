@@ -1,4 +1,4 @@
-# pokedex-django
+# pokedex-django (Inacabado)
 
 ## Um site para adicionar seus pokémons e favoritá-los
 
