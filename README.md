@@ -21,6 +21,7 @@
 ## Iniciar o scrapy
 > Para iniciar o scrapy vá até a url http://localhost:8000/scrapy e aperte em uma das opções
 
+![Scrapy](readme_imgs/scrapy-page.png)
 
 ###### Observações
 > Verifique a estabilidade da sua internet, pois isto poderá ocasionar erros <br>
